@@ -1,0 +1,2 @@
+DATEDIFF(min(vw_ProjectHoursBudgetCost[TimeEntryDate]),date(YEAR(TODAY()),MONTH(TODAY()),DAY(TODAY())),WEEK)
+/*this is a measure, not a column or table, it will assess per row*/
