@@ -1,0 +1,6 @@
+Month Budget = CALCULATE(SUM(vw_ProjectHoursBudgetCost[BudgetHours])
+    ,DATESINPERIOD('Date Table'[Date] date(YEAR(TODAY()),MONTH(TODAY()),1),1,MONTH)
+      )
+      /*there is no need for a slicer when using this formula
+      , and you dont need to include the date column in the visual or the table that you have created
+      */
