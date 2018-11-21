@@ -1,0 +1,18 @@
+Last Week Hours = CALCULATE(SUM(vw_ProjectHoursBudgetCost[Hours])
+,FILTER('Date Table','Date Table'[Date]>=DATE(YEAR(TODAY()),MONTH(TODAY()),DAY(TODAY())-
+        IF(WEEKDAY([Date],2)=7,13,
+            IF(WEEKDAY([Date],2)=6,12,
+                IF(WEEKDAY([Date],2)=5,11,
+                    IF(WEEKDAY([Date],2)=4,10,
+                        IF(WEEKDAY([Date],2)=3,9,   
+                            IF(WEEKDAY([Date],2)=2,8,                     
+                                IF(WEEKDAY([Date],2)=1,7)
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
