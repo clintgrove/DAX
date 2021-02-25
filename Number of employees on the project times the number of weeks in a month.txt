@@ -1,0 +1,7 @@
+Average Util = DIVIDE(SUM(Actuals[UTIL]),
+
+                    CALCULATE(DISTINCTCOUNT(Actuals[Emp ID]),ALLSELECTED('Calendar'[Week-Ending]))
+
+                    *        COUNTAX('Calendar',DISTINCTCOUNT('Calendar'[Week-Ending]))
+
+                    )
