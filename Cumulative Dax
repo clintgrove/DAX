@@ -1,0 +1,1 @@
+Cumulative Projects = [Revenue Achieved](FILTER(ALL('Calendar'),'Calendar'[Acutal Year/Month]<=MAX('Calendar'[Acutal Year/Month])))
