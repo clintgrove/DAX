@@ -1,0 +1,20 @@
+YTD money in DEC YEAR END = CALCULATE(TOTALYTD(SUM(SubsBilling[BillingAmount])
+                  ,'Calendar'[Date]
+                  ,'Calendar'[Date]<=DATE(YEAR(NOW()),12,31)
+                  ,"12/31")
+    ,USERELATIONSHIP('Calendar'[Date],SubsBilling[SubscriptionStartDate]))
+    
+    
+YTD money lost DEC = CALCULATE(TOTALYTD(SUM(SubsBilling[BillingAmount])
+                  ,'Calendar'[Date]
+                  ,'Calendar'[Date]<=DATE(YEAR(NOW()),12,31)
+                  ,"12/31")
+    ,USERELATIONSHIP('Calendar'[Date],SubsBilling[SubscriptionEndDate]))
+    
+    
+Calendar = ADDCOLUMNS(CALENDAR(DATE(2018,1,1),DATE(2035,12,31))
+                ,"Month-Year",FORMAT([Date],"mmm-YY")
+                ,"Month 'Year",FORMAT([Date],"mmm 'YY")
+                ,"Short Month",Format([Date],"mmm")
+                ,"MonthSortColumn",FORMAT([Date],"mm")
+                )
