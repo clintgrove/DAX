@@ -1,0 +1,13 @@
+/** Inside the Mquery window for applied steps put this code, which creates an applied step. 
+** .Scenario: If you have a start date column and an end date column, with a value, lets say that value is the subcription amount for your software that you are selling, and its 
+*** £200 per month. So you have one row, with a start date and end date for the contract and the £200 you will be charging. If you want to expand that £200 over every month and have one
+** line for every month that the contract is alive then you will do this below
+**/
+= Table.AddColumn(#"my awesome previous applied step handle here", "Month List", each 
+  let nr_months = ((Date.Year([Subscription End Date])-Date.Year([Subscription Start Date]))*12) 
+                + Date.Month([Subscription End Date]) - Date.Month([Subscription Start Date]) 
+  in {0..nr_months})
+  
+ /*and now you expand this column with a simple command*/
+ 
+ = Table.ExpandListColumn(#whateverhandlenameyouhave, "Month List")
