@@ -1,0 +1,4 @@
+Date Table = ADDCOLUMNS(
+              CALENDERAUTO(1)
+              , "Year", YEAR([Date])
+              )
